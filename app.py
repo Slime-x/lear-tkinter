@@ -21,12 +21,24 @@ frame.pack(pady=20)
 
 
 frame2 = ttk.Frame(window)
-Some_text = tk.StringVar()
-Magic = ttk.Label(frame2, text='Label', textvariable=Some_text)
-Magic.pack()
 
-Entry = ttk.Entry(frame2, textvariable=Some_text)
-Entry.pack()
+Some_text = tk.StringVar()
+_2frame = ttk.Frame(frame2) 
+
+
+_2text = ttk.Label(_2frame, text='Your Name:', font='Calibri 16 bold')
+_2text.pack(side='left', pady=10)
+Entry = ttk.Entry(_2frame, textvariable=Some_text)
+Entry.pack(side='right')
+
+
+_2frame.pack()
+
+_3frame = ttk.Frame(frame2)
+Magic = ttk.Label(_3frame, text='Label', textvariable=Some_text)
+Magic.grid(row=1,column=0)
+
+
 
 frame2.pack()
 
