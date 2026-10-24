@@ -36,9 +36,10 @@ _2frame.pack()
 
 _3frame = ttk.Frame(frame2)
 Magic = ttk.Label(_3frame, text='Label', textvariable=Some_text)
-Magic.grid(row=1,column=0)
+Magic.pack()
 
 
+_3frame.pack()
 
 frame2.pack()
 
