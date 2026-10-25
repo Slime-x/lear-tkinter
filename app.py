@@ -56,30 +56,30 @@ Btn_frame = ttk.Frame(window)
 
 # Button can have variables too. 
 button_string = tk.StringVar()
-_2button = ttk.Button(Btn_frame, text='this gets overwritten', command=lambda: print('button'), textvariable=button_string)
+_2button = ttk.Button(Btn_frame, text='this gets overwritten', command=lambda: print(Some_text.get()), textvariable=button_string)
 _2button.pack()
 
 
 # ------- Tick / Check button -------
 
-check_var = tk.IntVar()                     # Need this to know whether the button is checked or not | use Boolean mostly here. Using str just cause
+check_var = tk.StringVar()                     # Need this to know whether the button is checked or not | use Boolean mostly here. Using str just cause
 check = ttk.Checkbutton(
-    Btn_frame, 
-    text='are you under 18?', 
+    Btn_frame,
+    text='Alcohal', 
     command=lambda:print(check_var.get()),  #lambda is very imp. Learn abt it is I haven't
     variable = check_var,                   # Not named textvar cause it doesn't change the text. It is just a variable
-    onvalue= 100,                           # The value given to {variable} when button is on
-    offvalue= -100,                         # The value given to {variable} when button is off
+    onvalue= 'You can drink my guy',                           # The value given to {variable} when button is on
+    offvalue= 'Are you a girl? Hit me up...',                         # The value given to {variable} when button is off
 
 
     )
 check.pack()
-
+ 
 # Another example
 check_var2 = tk.IntVar(value='10') # Default is on.                   
 check2 = ttk.Checkbutton(
     Btn_frame, 
-    text='are you under 18?', 
+    text='Lays and Coke', 
     command=lambda:print(check_var2.get()),
     variable = check_var2,                 
     onvalue= 10,                         
@@ -89,6 +89,18 @@ check2.pack()
 
 
 # -------- RADIO BUTTON ----------
+
+_var_radio = tk.StringVar()
+radio1 = ttk.Radiobutton(
+    Btn_frame, 
+    text='Furry', 
+    value = 'meow',                         # Must have a unique value, else it will tweak out
+    variable=_var_radio,
+    command=lambda: print(_var_radio.get())
+    )
+radio2 = ttk.Radiobutton(Btn_frame, text='Diddy', value = 2)
+radio1.pack()
+radio2.pack()
 
 Btn_frame.pack()
 
