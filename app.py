@@ -55,9 +55,17 @@ frame2.pack()
 Btn_frame = ttk.Frame(window)
 
 # Button can have variables too. 
-button_string = tk.StringVar()
+button_string = tk.StringVar(value ='Print above data')
 _2button = ttk.Button(Btn_frame, text='this gets overwritten', command=lambda: print(Some_text.get()), textvariable=button_string)
-_2button.pack()
+_2button.pack(pady=5)
+
+
+def button(name):
+    print(name, Some_text.get())
+# If i want to send arguments in the fuction while using a button ot anyything
+x = 'SLIME'
+_3button = ttk.Button(Btn_frame, text='Nickname + Name', command=lambda: button(x))
+_3button.pack()
 
 
 # ------- Tick / Check button -------
@@ -98,7 +106,13 @@ radio1 = ttk.Radiobutton(
     variable=_var_radio,
     command=lambda: print(_var_radio.get())
     )
-radio2 = ttk.Radiobutton(Btn_frame, text='Diddy', value = 2)
+radio2 = ttk.Radiobutton(
+    Btn_frame, 
+    text='Diddy', 
+    value = 2,
+    variable=_var_radio,
+    command=lambda: print(_var_radio.get())
+    )
 radio1.pack()
 radio2.pack()
 
